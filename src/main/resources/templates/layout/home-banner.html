@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="home-banner" id="home-banner" class="home-banner-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="banner-content">
+                    <div class="banner-info">
+                        <h1>Hello, I am</h1>
+                        <h2 th:text="${#strings.substring(engineer.firstName,0,1)} + '. ' + ${#strings.substring(engineer.lastName,0,1)} + '. ' + ${engineer.familyName}"></h2>
+                        <h3 th:text="${engineer.workNow.poste}"></h3>
+                    </div>
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- home-banner -->
+</html>

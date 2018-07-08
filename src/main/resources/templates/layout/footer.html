@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="header" id="footer">
+    <div class="container">
+        <div class="footer">
+            <p th:text="' &copy;' + ${#dates.year(#dates.createNow())} + ' ' + ${engineer.getFullName()} + '.'"> All Rights Reserved</p>
+        </div>
+    </div><!-- contaner -->
+</div><!-- footer -->
+</html>

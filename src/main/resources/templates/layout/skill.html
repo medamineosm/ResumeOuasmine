@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:ul="http://www.thymeleaf.org">
+    <div th:fragment="skill" id="skill" class="skill-section bg-color section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h1>My Skills</h1>
+                    </div>
+                    <div class="text-info">
+                        <h4>Experience Skill</h4>
+                        <p th:text="${engineer.aboutMySkills}"></p>
+                    </div>
+                    <div class="progress-content">
+                        <div class="rating-bar bar-left">
+                            <th:block th:each="skill,iter : ${engineer.skills}" th:if="${iter.index}<3">
+                                <label th:text="${skill.skillName}"></label>
+                                <span th:text="${skill.percentage} + '%'" class="rating-count pull-right"></span>
+                                <div class="skill-progress">
+                                    <div class="progress">
+                                        <div th:class="'progress-bar bar' + ${iter.index}" role="progressbar" th:aria-valuenow="${skill.percentage}" aria-valuemin="0" aria-valuemax="100" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+
+                        <div class="skill rating-bar bar-right">
+                            <th:block th:each="skill,iter : ${engineer.skills}" th:if="${iter.index}>2">
+                                <label th:text="${skill.skillName}"></label>
+                                <span th:text="${skill.percentage} + '%'" class="rating-count pull-right"></span>
+                                <div class="skill-progress">
+                                    <div class="progress">
+                                        <div th:class="'progress-bar bar' + ${iter.index}" role="progressbar" th:aria-valuenow="${skill.percentage}" aria-valuemin="0" aria-valuemax="100" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+
+                    <div class="language-skill">
+                        <div class="text-info">
+                            <h4>Language skill</h4>
+                            <p th:text="${engineer.aboutMyLanguages}"></p>
+                        </div>
+                        <ul>
+                            <th:block th:each="lang,iter : ${engineer.languages}">
+                                <li class="chart" th:data-percent="${lang.percentage}">
+                                    <span th:class="'percent percent' + ${iter.index}"></span>
+                                    <h5 th:text="${lang.skillName}"></h5>
+                                </li>
+                            </th:block>
+
+                        </ul>
+                    </div><!-- more skill -->
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- skill section -->
+</html>

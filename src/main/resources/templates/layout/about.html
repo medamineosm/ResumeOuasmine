@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="about" id="about" class="about-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="section-title">
+                    <h1 th:text="${#strings.substring(engineer.firstName,0,1)} + '.' + ${engineer.lastName} +' '+ ${engineer.familyName}"></h1>
+                    <h4 th:text="${engineer.workNow.poste}"></h4>
+                </div>
+                <div class="about-info">
+                    <p th:text="${engineer.aboutMe}"></p>
+                    <div class="signature">
+                        <h1 th:text="${engineer.signature}"></h1>
+                    </div>
+                </div>
+                <address>
+                    <p th:utext="'<span>Nick Name:</span> ' + ${engineer.getFullName()}"></p>
+                    <p th:utext="'<span>Email:</span> ' + ${engineer.email}"></p>
+                    <p th:utext="'<span>Phone:</span> ' + ${engineer.phone}"></p>
+                    <p th:utext="'<span>Date of Birth:</span> ' + ${engineer.dateOfBirth}"></p>
+                    <p th:utext="'<span>Address:</span> ' + ${engineer.address.street} + ', ' + ${engineer.address.city}  + ', ' + ${engineer.address.codePostal} + ', ' + ${engineer.address.country}"></p>
+                </address>
+                <ul class="achievement">
+                    <li class="achievement-info">
+                        <span th:text="${engineer.projectCompleted}" class="counter"></span>
+                        <h4>Projects completed</h4>
+                    </li>
+                    <li class="achievement-info">
+                        <span th:text="${engineer.winningAward}" class="counter counter1"></span>
+                        <h4>Winning Awards</h4>
+                    </li>
+                    <li class="achievement-info">
+                        <span th:text="${engineer.happyClient}" class="counter counter2"></span>
+                        <h4>Happy Clients</h4>
+                    </li>
+                    <li class="achievement-info">
+                        <span th:text="${engineer.runningProject}" class="counter counter3"></span>
+                        <h4>Running Projects</h4>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- about section -->
+</html>
