@@ -6,7 +6,7 @@
 	<groupId>com.osm.guru</groupId>
 	<artifactId>ouasmine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>ouasmine</name>
 	<description>portfolio Amine</description>
